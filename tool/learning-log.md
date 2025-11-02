@@ -24,6 +24,22 @@ Links I used today:
 
 My next step is to design the database and then the UI in figma before I dive into the actual code. For the database I will be using PostgreSQL as the primary database and most likely Redis as a secondary database depends on if I need caching. For the design I think I am going for minimalistic dark theme.
 
+### 11/2/2025:
+
+I found this website: [prismaliser](https://prismaliser.app/). It lets you visualize and design Prisma database schemas. I used it to make the basic structure for my freedom project.
+
+I’ve learned that planning the database early really matters. In past projects I usually skipped this step and ended up having to redo a bunch of things later. This time, I’m trying to design it properly from the start before everything else.
+
+I also implemented automatic database migration when the user installs the app through Docker. Normally I run migrations manually, but I wanted to make setup as simple as possible, like running a single command to get everything running. I have never done automatic migrations before, so this was new to me. It took me some time to get it to work, but it works now.
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1762119753/prismaliser_2_llmfdf.png)
+
+Although the Docker image size is a bit too large (~1.8 GB), that’s something I’ll need to fix later.
+
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1762126922/Screenshot_2025-11-02_184121_to9ykc.png)
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1762126924/Screenshot_2025-11-02_184131_x91mct.png)
+
+Next, I’m going to work on adding authentication. I want to make sure users can register and log in properly before I start focusing on the UI or the actual features.
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
