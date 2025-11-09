@@ -4,7 +4,7 @@
 
 ### Choosing the Topic
 
-In todays world, AI chatbots are super useful for learning, creativity, and just getting stuff done. But its still hard for most people to make one that really fits what they want. Most AI tools dont let you control how the bot acts or talks, and building one from scratch is extremely difficult and takes a lot of time. My freedom project this year is trying to fix that by making a easy self hosted platform where anyone can make, customize and share your own AI chatbots with just prompt engineering skills.
+In todays world, AI chatbots are super useful for learning, creativity, and just getting stuff done. But its still hard for most people to make one that really fits what they want. Most AI tools don't let you control how the bot acts or talks, and building one from scratch is extremely difficult and takes a lot of time. My freedom project this year is trying to fix that by making a easy self hosted platform where anyone can make, customize and share your own AI chatbots with just prompt engineering skills.
 
 ### Setting Up the Project & Designing the Architecture
 
@@ -43,7 +43,7 @@ When I first started this project, it feels overwhelming because there were so m
 
 ### Next Step
 
-My next step of this project is to implement authentication, and start building basic RBAC (Role-based access control) so users can have accounts and permissions. Once I have that working, I'll begin setting up a DAL (Data Access Layer) for managing user and chatbot data.
+My next step for this project is to implement authentication, and start building basic RBAC (Role-based access control) so users can have accounts and permissions. Once I have that working, I'll begin setting up a DAL (Data Access Layer) for managing user and chatbot data.
 
 [Next](entry02.md)
 
