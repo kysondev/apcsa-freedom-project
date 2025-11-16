@@ -40,6 +40,19 @@ Although the Docker image size is a bit too large (~1.8 GB), that’s something 
 
 Next, I’m going to work on adding authentication. I want to make sure users can register and log in properly before I start focusing on the UI or the actual features.
 
+### 11/16/2025
+
+To add authentication to my platform, I needed to decide whether to build it from scratch or use an existing authentication library or framework. I chose to use a framework because building my own would take far too long, and I wouldn’t be able to guarantee full security. The auth framework I chose is [better-auth](https://www.better-auth.com/). Luckily, I previously built a CLI tool([pulsenext](https://github.com/kysondev/pulsenext)) that lets me quickly implement authentication with a basic UI in just one command. I used it, and now I have basic authentication set up.
+
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1763331804/Screenshot_2025-11-16_171259_yfa6lx.png)
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1763331814/Screenshot_2025-11-16_171236_rqelu4.png)
+
+So far, authentication and the UI works perfectly. However, since sending email requires using [resend](https://resend.com/) API, I would need to find a way later to let the admin add their API key and configure their domain. Another issue is that because my Postgres database is running locally in a Docker container, the data persists even after the container is deleted. I’ll need to find a way to automatically remove the data when the container is removed. I also need to start designing the web panel UIs, including the login and signup pages.
+
+Next, I need to restructure the project because the authentication code I previously wrote for pulsenext template doesn’t match the architecture I’m using for this project, so some refactoring is required.
+
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1763334442/Screenshot_2025-11-16_180706_qzaplr.png)
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
