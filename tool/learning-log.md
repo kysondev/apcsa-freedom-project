@@ -53,6 +53,33 @@ Next, I need to restructure the project because the authentication code I previo
 
 ![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1763334442/Screenshot_2025-11-16_180706_qzaplr.png)
 
+### 11/22/2025
+
+A good project always needs good architecture design. To improve the architecture of my freedom project I've been thinking about migrating my project to a feature-based architecture. I looked up how other developers organize their project directories and found this helpful [Medium](https://medium.com/@JMauclair/feature-driven-architecture-fda-a-scalable-way-to-structure-your-next-js-applications-b8c1703a29c0) post, which I used as inspiration to create my own layout.
+
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1763918140/Screenshot_2025-11-23_121513_t4ndvn.png)
+
+Next, I added TypeScript path aliases to make imports cleaner and easier to manage.
+
+tsconfig.json:
+
+```json
+"paths": {
+	"~/*": ["./src/*"],
+	"@auth/*": ["./feature/core/auth/*"],
+	"@common/*": ["./feature/common/*"]
+},
+```
+
+These aliases let me write shorter and more readable imports:
+
+```tsx
+import { resetPassword } from "@auth/actions/auth.action";
+import { Loading } from "@common/components/ui/loading";
+```
+
+Overall, this improves the structure of the project. My next step is to design the UI for admin registration and then move on to implementing the backend.
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
