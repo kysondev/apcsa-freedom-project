@@ -2,15 +2,15 @@
 
 ## Tool: NextJS, TypeScript, PostgreSQL, Redis, Prisma, Kysely, Docker
 
-## Project: BuildLLM (buildllm.chat)
+## Project: TypePanel
 
-Description: A self hosted platform where users can create their own AI chatbots by choosing a base model (ex. gpt, claude, deepseek), customizing it with prompt engineering, and publishing it for others to use. They can also add a custom knowledge base.
+Description: A self-hosted platform for creating, customizing, and deploying AI chatbots using prompt engineering and modular knowledge bases.
 
 ---
 
 ### 10/5/2025:
 
-- Today I set up a separate [github repo](https://github.com/kysondev/buildllm) for my BuildLLM project and installed Next.js along with the main tools I’ll be using, like Prisma, Kysely, and Docker. Prisma will handle the database schema, and Kysely will be my query builder since it’s faster and simpler for queries. I also made a basic Docker and Docker Compose setup that I can use later for production.
+- Today I set up a separate [github repo](https://github.com/kysondev/typepanel) for my TypePanel project and installed Next.js along with the main tools I’ll be using, like Prisma, Kysely, and Docker. Prisma will handle the database schema, and Kysely will be my query builder since it’s faster and simpler for queries. I also made a basic Docker and Docker Compose setup that I can use later for production.
 
 ![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1759713853/Screenshot_2025-10-05_211337_g58jik.png)
 
@@ -79,6 +79,34 @@ import { Loading } from "@common/components/ui/loading";
 ```
 
 Overall, this improves the structure of the project. My next step is to design the UI for admin registration and then move on to implementing the backend.
+
+### 12/7/2025
+
+This week I worked on designing a minimalistic light theme UI for my project. I started with the login and signup pages since they're the first screens users will see.
+
+I decided not to use a UI library like [Shadcn](https://ui.shadcn.com/) and just built the components myself with [TailwindCSS](https://tailwindcss.com/). It gave me more freedom to style things the way I wanted. I chose black as the primary color because it keeps the layout clean and minimal.
+
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1765145803/Screenshot_2025-12-07_171548_dr19yi.png)
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1765145846/Screenshot_2025-12-07_171710_zdl38h.png)
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1765145910/Screenshot_2025-12-07_171817_bq50qn.png)
+
+For the Google and GitHub buttons, I originally planned to download the icons manually, but that felt unnecessary and cluttered. After looking around, I found a small icon library called [Developer-Icons](https://xandemon.github.io/developer-icons/), which includes many popular logos and works well in React.
+
+Example Usage:
+
+```javascript
+import { HtmlIcon, JavascriptIcon } from "developer-icons";
+
+//inside your React component JSX
+export const YourReactComponent = () => {
+  return (
+    <div>
+      <HtmlIcon className="html-icon" />
+      <JavascriptIcon size={52} style={{ marginLeft: 20 }} />
+    </div>
+  );
+};
+```
 
 <!--
 * Links you used today (websites, videos, etc)
