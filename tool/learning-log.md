@@ -108,6 +108,53 @@ export const YourReactComponent = () => {
 };
 ```
 
+### 12/14/2025
+
+[Prisma](https://www.prisma.io/) is a really powerdful ORM for creating database schemas and handling migrations, but I noticed that its query speed can be pretty slow. Because of that, I started looking for other ways to query the database more efficiently.
+
+I found [Kysely](https://kysely.dev/), which is a query builder that doesn't add much overhead to SQL query. I decided to use Kysely as my main way to query the database, while still using Prisma for building and migrating the schema.
+
+To make using both tools easier, I also found an npm package called `prisma-kysely`. It automatically generates Kysely types from the Prisma schema, which helps keep everything type-safe without having to write extra code.
+
+After choosing this setup, I wanted to try it out in my freedom project (TypePanel). I added an admin existence check so I can later build an admin setup flow.
+
+This is a data access layer function I wrote to check if at least one admin user exists:
+
+```javascript
+export const adminExists = async () => {
+  try {
+    const admin = await db
+      .selectFrom("user")
+      .select("id")
+      .where("role", "=", "admin")
+      .limit(1)
+      .executeTakeFirst();
+    return !!admin;
+  } catch (error) {
+    return false;
+  }
+};
+```
+
+Then I created an API route at `/api/admin/check-exist` that calls this function:
+
+```javascript
+import { adminExists } from "@auth/services/user.service";
+
+export async function GET() {
+  try {
+    const adminExist = await adminExists();
+    return Response.json({ adminExist });
+  } catch (error) {
+    return Response.json({ adminExist: false });
+  }
+}
+```
+
+I also started working on the UI for the admin setup page. It doesn't do anything yet, but it's ready for when I add the logic later.
+
+![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1765757890/Screenshot_2025-12-14_191723_p0fdv5.png)
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
