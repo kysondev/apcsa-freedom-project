@@ -4,7 +4,7 @@
 
 ### Content: Progress I Have Made & Goals for Winter Break
 
-Over the past month, I've made some progress on my Freedom Project ([TypePanel](https://github.com/kysondev/typepanel)). I set up the basic authentication system and data access layers for user related services. For authentication, I discovered a TypeScript framework called [Better-Auth](https://better-auth.com/). It made authentication easy to set up while maintaining best security practices.
+Over the past month, I've made some progress on my Freedom Project ([TypePanel](https://github.com/kysondev/typepanel)). I set up the basic authentication system and data access layers for user related services. For authentication, I discovered a TypeScript framework called [Better-Auth](https://better-auth.com/). It made authentication easy to set up while maintaining best security practices. I also found a YouTube tutorial that explained how Better Auth works and how to integrate it into a Next.js project: [Better Auth in Next.js (Complete Tutorial)](https://www.youtube.com/watch?v=x4hQ2Hmuy3k)
 
 I also worked on the authentication page UI. I decided not to use a UI library like [Shadcn](https://ui.shadcn.com/) and just built the components myself with [TailwindCSS](https://tailwindcss.com/). It gave me more freedom to style things the way I wanted. I chose black as the primary color because it keeps the layout clean and minimal.
 
