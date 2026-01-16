@@ -155,6 +155,55 @@ I also started working on the UI for the admin setup page. It doesn't do anythin
 
 ![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1765757890/Screenshot_2025-12-14_191723_p0fdv5.png)
 
+### 1/15/2026
+
+This week, I decided to work on an admin page for my freedom project. Since the admin page is meant for administrators only, I needed to make sure it was properly protected. I added the route to my `routes.ts` file, which I created to manage the routes of the platform.
+
+```js
+export const PROTECTED_ROUTES = ["/admin"];
+export const AUTH_ROUTES = [
+  "/auth/login",
+  "/auth/signup",
+  "/auth/admin-setup",
+  "/auth/forgot-password",
+  "/auth/reset-password",
+];
+```
+
+Next, I needed to ensure that non-auth users could never reach the admin page. To do this, I read the middleware section of the [Next.js](https://nextjs.org/docs) documentation. Middleware is useful for blocking requests before they ever reach an endpoint. Based on this, I added if statements in `middleware.ts` to check whether the user is an admin.
+
+```ts
+  const isAuthRoute = AUTH_ROUTES.includes(currentPath);
+  const isAdminRoute = currentPath.startsWith("/admin");
+
+  if (isProtectedRoute || isAuthRoute) {
+    const session = await getSession(request);
+
+    if (session) {
+      if (isAdminRoute && session.user?.role !== "admin") {
+        return NextResponse.redirect(new URL("/", request.url));
+      }
+      if (AUTH_ROUTES.includes(currentPath)) {
+        return NextResponse.redirect(new URL("/", request.url));
+      }
+    } else {
+      const adminExists = await hasAdminUser();
+      if (!adminExists && currentPath !== "/auth/admin-setup") {
+        return NextResponse.redirect(new URL("/auth/admin-setup", request.url));
+      }
+      if (adminExists && currentPath === "/auth/admin-setup") {
+        return NextResponse.redirect(new URL("/auth/login", request.url));
+      }
+      if (!isAuthRoute) {
+        return NextResponse.redirect(new URL("/auth/login", request.url));
+      }
+    }
+```
+
+If a user's role is not `admin`, they are redirected to the home `/` route. This make sure that only administrators can access the admin page.
+
+My next step is to officially start working on building the admin page itself.
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
