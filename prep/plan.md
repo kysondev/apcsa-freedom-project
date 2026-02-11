@@ -1,7 +1,8 @@
 # Plan
 
-## Tool: 
-## Product: 
+## Tool: Next.js, TypeScript, Postgres (pgvector), Prisma, Kysely, Docker, AI SDK, Better-Auth, Redis, MinIO
+
+## Product: TypePanel
 
 ---
 
@@ -9,14 +10,22 @@
 
 #### MVP
 
-- [ ] Task (deadline: X)
-  - [ ] Subtask (deadline: X)
+- [ ] Admin Panel Page (deadline: 03/09)
+  - [ ] Build the dashboard layout/ui using TailwindCSS (02/18)
+  - [ ] Implement user account management in NextJS with Better-Auth (03/01)
+  - [ ] Allow users to upload and manage knowledge base documents for bots (03/09)
+  - [ ] Enable bots to use uploaded knowledge when generating responses (deadline: 03/09)
+
+- [ ] Chat UI (deadline: 04/03)
+  - [ ] Design and build a chat UI for interacting with bots (deadline: 03/16)
+  - [ ] Allow users to send messages and receive responses from selected bots (deadline: 03/22)
+  - [ ] Save chat history for later viewing (deadline: 04/03)
 
 #### Beyond MVP
 
-- [ ] Task
-  - [ ] Subtask
-
+- [ ] Support more document formats
+- [ ] Add prompt versioning and editing improvements
+- [ ] Track token usage and basic cost estimates
 
 <!-- EXAMPLE
 
@@ -43,13 +52,9 @@
 
 -->
 
-
-
-
-
 <!-- DO NOT USE THIS YET
 
-#### Peer Feedback 
+#### Peer Feedback
 
 | Name | Glows | Grows |
 | -------- | ------- | ------- |
