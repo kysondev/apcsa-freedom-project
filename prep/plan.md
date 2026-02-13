@@ -4,6 +4,8 @@
 
 ## Product: TypePanel
 
+A self-hosted (Docker based) platform for building and deploying custom AI chatbots with prompt engineering and knowledge bases.
+
 ---
 
 ## Timeline
