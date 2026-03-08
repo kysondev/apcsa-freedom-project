@@ -204,6 +204,13 @@ If a user's role is not `admin`, they are redirected to the home `/` route. This
 
 My next step is to officially start working on building the admin page itself.
 
+### 3/8/2026
+
+This weekend, I worked on designing the admin dashboard for my Freedom project. To get ideas, I looked on [Dribbble](https://dribbble.com/search/dashboards-black-and-white) by searching for “dashboards black and white” and found a lot of designs that inspired me. I mixed some of the ideas I liked into my own layout. For the sidebar, I made it black with white text. So far, I've built the Overview, Users, Models, and Knowledge Base pages. I added some mock data to test things because I haven't build the backend yet. I used [TailwindCSS](https://tailwindcss.com/) for the layout and [Lucide-react](https://lucide.dev/) for the icons. Right now, I'm using a placeholder logo I found online, but I plan to make my own later. My next step is to implement backends and secure the `/admin` route.
+
+![Image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1772983413/Screenshot_From_2026-03-08_11-23-03_hntgtc.png)
+![Image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1772983447/Screenshot_From_2026-03-08_11-24-01_sop1xx.png)
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
