@@ -8,7 +8,7 @@ Over the past month, I started working on the admin dashboard pages of my projec
 
 ![image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1773628957/imasdasage_hagknw.png)
 
-After finishing the frontend layout, the next step was to secure the `/admin route` using middleware so that only admin users can access the dashboard.
+After finishing the frontend layout, the next step was to secure the `/admin` route using middleware so that only admin users can access the dashboard.
 
 ```typescript
 if (session) {
