@@ -211,6 +211,68 @@ This weekend, I worked on designing the admin dashboard for my Freedom project. 
 ![Image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1772983413/Screenshot_From_2026-03-08_11-23-03_hntgtc.png)
 ![Image](https://res.cloudinary.com/dyu7ogoqc/image/upload/v1772983447/Screenshot_From_2026-03-08_11-24-01_sop1xx.png)
 
+### 3/22/2026
+
+This week, I began working on the user management page, specifically the user role promotion and demotion feature. I built a simple dropdown menu and confirmation modal component. Next, I worked on the backend functionality to change user roles in the database.
+
+Luckily, the authentication framework I am using, ([Better Auth](https://better-auth.com/docs/plugins/admin#set-user-role)), has a built-in admin plugin that allows admin users to modify other user's role.
+
+From the official documentation:
+
+```ts
+const { data, error } = await authClient.admin.setRole({
+  userId: "user-id",
+  role: "admin", // required
+});
+```
+
+I then made two function that handles promotion and demotion
+
+promoteUser function:
+
+```ts
+export const promoteUser = async (userId: string) => {
+  try {
+    const { error } = await authClient.admin.setRole({
+      userId,
+      role: "admin",
+    });
+
+    if (error) {
+      console.error("Failed to promote user:", error);
+      return { success: false, message: "Failed to promote user" };
+    }
+    return { success: true, message: "User promoted to admin" };
+  } catch (error) {
+    console.error("Failed to promote user:", error);
+    return { success: false, message: "Failed to promote user" };
+  }
+};
+```
+
+demoteUser function:
+
+```ts
+export const demoteUser = async (userId: string) => {
+  try {
+    const { error } = await authClient.admin.setRole({
+      userId,
+      role: "user",
+    });
+
+    if (error) {
+      console.error("Failed to demote user:", error);
+      return { success: false, message: "Failed to demote user" };
+    }
+
+    return { success: true, message: "User demoted to regular user" };
+  } catch (error) {
+    console.error("Failed to demote user:", error);
+    return { success: false, message: "Failed to demote user" };
+  }
+};
+```
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
