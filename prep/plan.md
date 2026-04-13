@@ -12,16 +12,16 @@ A self-hosted (Docker based) platform for building and deploying custom AI chatb
 
 #### MVP
 
-- [ ] Admin Panel Page (deadline: 03/09)
-  - [ ] Build the dashboard layout/ui using TailwindCSS (02/18)
-  - [ ] Implement user account management in NextJS with Better-Auth (03/01)
-  - [ ] Allow users to upload and manage knowledge base documents for bots (03/09)
-  - [ ] Enable bots to use uploaded knowledge when generating responses (deadline: 03/09)
+- [x] Admin Panel Page (deadline: 03/09)
+  - [x] Build the dashboard layout/ui using TailwindCSS (02/18)
+  - [x] Implement user account management in NextJS with Better-Auth (03/01)
+  - [x] Allow users to upload and manage knowledge base documents for bots (03/09)
+  - [x] Enable bots to use uploaded knowledge when generating responses (deadline: 03/09)
 
-- [ ] Chat UI (deadline: 04/03)
-  - [ ] Design and build a chat UI for interacting with bots (deadline: 03/16)
-  - [ ] Allow users to send messages and receive responses from selected bots (deadline: 03/22)
-  - [ ] Save chat history for later viewing (deadline: 04/03)
+- [x] Chat UI (deadline: 04/03)
+  - [x] Design and build a chat UI for interacting with bots (deadline: 03/16)
+  - [x] Allow users to send messages and receive responses from selected bots (deadline: 03/22)
+  - [x] Save chat history for later viewing (deadline: 04/03)
 
 #### Beyond MVP
 
