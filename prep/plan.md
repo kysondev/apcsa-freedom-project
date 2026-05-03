@@ -25,6 +25,7 @@ A self-hosted (Docker based) platform for building and deploying custom AI chatb
 
 #### Beyond MVP
 
+- [x] Add markdown support to chatbot messages (suggested by Qilin)
 - [ ] Support more document formats
 - [ ] Add prompt versioning and editing improvements
 - [ ] Track token usage and basic cost estimates
